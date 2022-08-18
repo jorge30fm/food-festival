@@ -13,6 +13,18 @@ module.exports = {
 		filename:"[name].bundle.js",
 		path: __dirname + "/dist",
 	},
+	module: {
+		rules: [
+			{
+				test: /\.jpg$/i,
+				user: [
+					{
+						loader: 'file-loader'
+					}
+				]
+			}
+		]
+	},
 	plugins: [
 		new webpack.ProvidePlugin({
 			$: "jquery",
